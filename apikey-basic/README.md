@@ -51,22 +51,6 @@ The flow of the sample goes like this:
 3. A Quota policy executes, with quota values set based on the API key flow variables. 
 4. An Assign Message policy executes to remove the `apikey` parameter from the request. Otherwise, it would be passed on to the back-end target. This step is considered a best practice. 
 
-### Set up, deploy, invoke
-
-See the main project [README](../../README.md) file for information about setting up, deploying, and invoking sample proxies. 
-
-When you invoke this proxy, it returns weather information from the back-end target. The quota set in the product associated with this API key is set to allow only 1 call per minute! So, if you call it a couple of times in succession, you'll get this error:
-
-```
-{"fault":{"faultstring":"Rate limit quota violation. Quota limit  exceeded. Identifier : G8M6kx6zSnAERwvMSmmUvzXs460G7k2oN","detail":{"errorcode":"policies.ratelimit.QuotaViolation"}}}
-```
-
-### Trace
-
-This screen shot from the [Apigee Edge trace tool](http://apigee.com/docs/api-services/content/using-trace-tool-0) shows the placement of the policies used in this sample. 
-
-![alt text](../../images/apikey-quota-trace.png) 
-
 ### More information
 
 **Policy used in this sample**
@@ -91,7 +75,7 @@ Deploy to your org with one click.
 <img src="https://raw.githubusercontent.com/apigee/apigee-deploy-now/master/images/deploy_to_apigee.png" align="left" height="45" width="232" >
 </a>
 <br/>
-
+<br/>
 ---
 
 Copyright © 2016 Apigee Corporation
